@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import App from "@/app/page";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -21,7 +23,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className + ' overflow-hidden'}>
         <App>
-          {children}
+          <AntdRegistry>
+            {children}
+          </AntdRegistry>
         </App>
       </body>
     </html>
